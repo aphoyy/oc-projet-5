@@ -29,7 +29,6 @@ function setDirection(direction) {
 	if (currentSlide < 0) {
 		currentSlide = slidesMax;
 	} else if (currentSlide > slidesMax) {
-		console.log("test");
 		currentSlide = 0;
 	}
 	displaySlide();

@@ -30,14 +30,19 @@
 			alt="Right arrow"
 			onclick="setDirection('right')"
 		/>
-		<img class="banner-img" id="slider-img" src="./assets/images/slideshow/slide1.jpg" alt="Banner Print-it" />
+		<img 
+			class="banner-img"
+			id="slider-img"
+			src="./assets/images/slideshow/slide1.jpg"
+			alt="Banner Print-it"
+		/>
 		<p id="slider-tagline">Impressions tous formats <span>en boutique et en ligne</span></p>
-		<div class="dots">
-			<div class="dot dot_selected" id="dot-1" onclick="setValue(1)"></div>
+		<nav class="dots">
+			<div class="dot dot_selected" id="dot-0" onclick="setValue(0)"></div>
+			<div class="dot" id="dot-1" onclick="setValue(1)"></div>
 			<div class="dot" id="dot-2" onclick="setValue(2)"></div>
 			<div class="dot" id="dot-3" onclick="setValue(3)"></div>
-			<div class="dot" id="dot-4" onclick="setValue(4)"></div>
-		</div>
+		</nav>
 	</div>
 	<section id="about-us" class="container">
 		<div>

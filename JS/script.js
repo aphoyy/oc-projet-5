@@ -1,4 +1,3 @@
-const image = document.getElementById("slider-img");
 const slides = [
 	{
 		"image":"slide1.jpg",
@@ -20,7 +19,7 @@ const slides = [
 const slidesMax = slides.length - 1;
 
 let currentSlide = 0;
-let previousSlideId = document.getElementById("dot-" + (currentSlide + 1));
+let currentSlideId = document.getElementById("dot-" + currentSlide);
 
 function setDirection(direction) {
 	// If left go backward else go foward
@@ -35,19 +34,21 @@ function setDirection(direction) {
 }
 
 function setValue(number) {
-	// Set currentSlide equal number - 1 to use it in an array
-	currentSlide = number - 1;
+	// Set currentSlide to dot position
+	currentSlide = number;
 	displaySlide();
 }
 
 function displaySlide() {
 	// Set current image and tagLine
-	image.src = "./assets/images/slideshow/" + slides[currentSlide]["image"];
-	document.getElementById("slider-tagline").innerHTML = slides[currentSlide]["tagLine"];
+	document.getElementById("slider-img").src =
+		"./assets/images/slideshow/" + slides[currentSlide]["image"];
+	document.getElementById("slider-tagline").innerHTML =
+		slides[currentSlide]["tagLine"];
 
 	// Remove old selected dot
-	previousSlideId.classList.remove("dot_selected");
+	currentSlideId.classList.remove("dot_selected");
 	// Set a new selected dot
-	previousSlideId = document.getElementById("dot-" + (currentSlide + 1));
-	previousSlideId.classList.add("dot_selected");
+	currentSlideId = document.getElementById("dot-" + currentSlide);
+	currentSlideId.classList.add("dot_selected");
 }
